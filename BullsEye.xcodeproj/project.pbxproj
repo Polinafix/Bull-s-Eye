@@ -12,6 +12,7 @@
 		E0B31C031F00AABA00D7817C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0B31C011F00AABA00D7817C /* Main.storyboard */; };
 		E0B31C051F00AABA00D7817C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0B31C041F00AABA00D7817C /* Assets.xcassets */; };
 		E0B31C081F00AABA00D7817C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0B31C061F00AABA00D7817C /* LaunchScreen.storyboard */; };
+		E0D1D7CF1F082B2B00D6AEBC /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D1D7CE1F082B2B00D6AEBC /* AboutViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		E0B31C041F00AABA00D7817C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E0B31C071F00AABA00D7817C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E0B31C091F00AABA00D7817C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E0D1D7CE1F082B2B00D6AEBC /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				E0B31BFD1F00AABA00D7817C /* AppDelegate.swift */,
 				E0B31BFF1F00AABA00D7817C /* ViewController.swift */,
+				E0D1D7CE1F082B2B00D6AEBC /* AboutViewController.swift */,
 				E0B31C011F00AABA00D7817C /* Main.storyboard */,
 				E0B31C041F00AABA00D7817C /* Assets.xcassets */,
 				E0B31C061F00AABA00D7817C /* LaunchScreen.storyboard */,
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0D1D7CF1F082B2B00D6AEBC /* AboutViewController.swift in Sources */,
 				E0B31C001F00AABA00D7817C /* ViewController.swift in Sources */,
 				E0B31BFE1F00AABA00D7817C /* AppDelegate.swift in Sources */,
 			);
@@ -300,6 +304,7 @@
 				E0B31C0E1F00AABA00D7817C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -12,21 +12,24 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var targetLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var roundLabel: UILabel!
     
     var currentValue = 0
     var targetValue = 0
     var score = 0
+    var round = 1
     @IBOutlet weak var slider: UISlider!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        startNewRound()
+        startNewGame()
         updateLabels()
        
     }
     
     func startNewRound(){
         currentValue = 50
+        roundLabel.text = "1"
         slider.value = Float(currentValue)
         //generating a random Number in the range from 1 to 100
         targetValue = 1 + Int(arc4random_uniform(100))
@@ -36,25 +39,50 @@ class ViewController: UIViewController {
     func updateLabels(){
         targetLabel.text = String(targetValue)
         scoreLabel.text = String(score)
+        roundLabel.text = String(round)
     }
 
    
     
     @IBAction func showAlert() {
         let difference = abs(currentValue - targetValue)
-        let points = 100 - difference
-        score += points
+        var points = 100 - difference
+        
+        
+        
+        round += 1
+        
         let message = " You scored \(points) points"
         
-        let alert = UIAlertController(title: "Hello, World",
+        let title: String
+        if difference == 0 {
+            title = "Perfect!"
+            points += 100
+        } else if difference < 5 {
+            title = "You almost had it!"
+            if difference == 1 {
+                points += 50
+            }
+        } else if difference < 10 {
+            title = "Pretty good!"
+        } else {
+            title = "Not even close..."
+        }
+        
+        score += points
+        
+        let alert = UIAlertController(title: title,
                                       message: message,
                                       preferredStyle: .alert)
-        let action = UIAlertAction(title: "Awesome", style: .default,
-                                   handler: nil)
+        //handler tells the alert what should happen when the button is pressed
+        
+        let action = UIAlertAction(title: "OK", style: .default,
+                                   handler: {action in
+                                    self.startNewRound()
+                                    self.updateLabels()})
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
-        startNewRound()
-        updateLabels()
+       
     }
     
     @IBAction func sliderMoved(_ sender: UISlider) {
@@ -63,6 +91,15 @@ class ViewController: UIViewController {
         currentValue = lroundf(sender.value)
     }
     
+    @IBAction func startOver(_ sender: UIButton) {
+        startNewGame()
+        updateLabels()
+    }
+    func startNewGame(){
+        score = 0
+        round  = 1
+        startNewRound()
+    }
 
 
 }
